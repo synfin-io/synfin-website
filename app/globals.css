@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Reusable button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+      bg-brand-teal hover:bg-brand-teal-dark
+      text-white font-semibold
+      px-6 py-3 rounded-lg
+      transition-all duration-200
+      shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+      border-2 border-brand-teal text-brand-teal
+      hover:bg-brand-teal hover:text-white
+      font-semibold
+      px-6 py-3 rounded-lg
+      transition-all duration-200;
+  }
+
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2
+      bg-white text-brand-teal hover:bg-gray-50
+      font-semibold
+      px-6 py-3 rounded-lg
+      transition-all duration-200
+      shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  /* Section containers */
+  .section {
+    @apply py-20 px-4;
+  }
+
+  .container-xl {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100
+      p-6 hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Section headings */
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-gray-900;
+  }
+
+  .section-subheading {
+    @apply text-lg text-gray-500 mt-4 max-w-2xl;
+  }
+
+  /* Teal text highlight */
+  .text-teal-brand {
+    @apply text-brand-teal;
+  }
+}
