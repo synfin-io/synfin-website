@@ -19,14 +19,22 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Replace with your actual form submission endpoint (e.g., Formspree, Resend, etc.)
-    // await fetch("/api/contact", { method: "POST", body: JSON.stringify(form) });
-    await new Promise((r) => setTimeout(r, 1000)); // simulate network
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
+      setSubmitted(true);
+    } catch {
+      alert("Something went wrong. Please email us directly at prasanthi@synfin.io");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputClass =
