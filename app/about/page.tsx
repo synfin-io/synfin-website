@@ -82,7 +82,7 @@ export default function AboutPage() {
             </span>
           </h1>
           <p className="mt-6 text-lg text-gray-300 max-w-2xl mx-auto">
-            SynFin was founded to give organisations access to enterprise-calibre security
+            SynFin was founded to give organizations access to enterprise-caliber security
             expertise — without the enterprise overhead. We are practitioners first.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function AboutPage() {
               <span className="text-brand-teal font-semibold text-sm uppercase tracking-wider">Our Mission</span>
               <h2 className="section-heading mt-2">Defending the Digital Frontier</h2>
               <p className="mt-4 text-gray-500 leading-relaxed">
-                SynFin LLC was founded with a single mission: help organisations understand
+                SynFin LLC was founded with a single mission: help organizations understand
                 and reduce their real-world cyber risk. We believe security should be
                 <strong className="text-gray-700"> accessible, honest, and outcome-driven</strong> — not a
                 checkbox exercise.
@@ -105,7 +105,7 @@ export default function AboutPage() {
                 Based in McKinney, Texas, we serve clients across industries — from
                 technology startups to regulated financial and healthcare enterprises. Our
                 team brings decades of combined experience across application security,
-                penetration testing, threat intelligence, and security programme management.
+                penetration testing, threat intelligence, and security program management.
               </p>
               <p className="mt-4 text-gray-500 leading-relaxed">
                 Whether you need a one-time assessment or an ongoing security partnership,
@@ -163,7 +163,7 @@ export default function AboutPage() {
             <span className="text-brand-teal font-semibold text-sm uppercase tracking-wider">Credentials</span>
             <h2 className="section-heading mt-2">Certified Experts</h2>
             <p className="section-subheading mx-auto">
-              Our team holds industry-recognised certifications from GIAC, Offensive Security,
+              Our team holds industry-recognized certifications from GIAC, Offensive Security,
               ISC², and cloud providers.
             </p>
           </div>

@@ -33,7 +33,7 @@ const services = [
     ),
     title: "Vulnerability Management",
     description:
-      "Continuous identification, prioritisation, remediation tracking, and reporting across your entire attack surface.",
+      "Continuous identification, prioritization, remediation tracking, and reporting across your entire attack surface.",
     tags: ["VM", "Patch Tracking", "Risk Scoring"],
     href: "/services#vm",
   },
@@ -46,7 +46,7 @@ const services = [
     ),
     title: "Red Teaming",
     description:
-      "Full-scope adversarial simulations that mimic real-world threat actors to stress-test your defences end-to-end.",
+      "Full-scope adversarial simulations that mimic real-world threat actors to stress-test your defenses end-to-end.",
     tags: ["APT Simulation", "Social Engineering", "Physical"],
     href: "/services#red-team",
   },
@@ -201,6 +201,136 @@ export default function HomePage() {
                 <p className="mt-1 text-sm text-gray-500">{s.label}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MYTHOS READINESS SPOTLIGHT ─────────── */}
+      <section className="relative overflow-hidden bg-gray-950 py-20 px-4">
+        {/* Animated grid */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,191,179,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0,191,179,0.4) 1px, transparent 1px)",
+            backgroundSize: "48px 48px",
+          }}
+        />
+        {/* Glows */}
+        <div className="absolute top-0 right-1/3 w-72 h-72 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-56 h-56 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left: content */}
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                  New Service
+                </span>
+                <span className="text-gray-500 text-xs">AI-Era Threat Defense</span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
+                Are You Ready for{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-300">
+                  AI-Automated Attacks?
+                </span>
+              </h2>
+
+              <p className="mt-5 text-gray-300 text-lg leading-relaxed">
+                Platforms like{" "}<strong className="text-teal-400">Mythos</strong>{" "}can scan,
+                reason, and exploit your internet-facing assets at machine speed — within
+                minutes of a CVE being published. Most organizations don&apos;t know what
+                an AI attacker would find until it&apos;s too late.
+              </p>
+
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Reduce your internet-facing attack surface",
+                  "Prioritize patches on exposed assets before AI bots exploit them",
+                  "Map and break your attack chains before adversaries connect the dots",
+                  "Run AI-powered scans to find and fix what Mythos-class tools would find",
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-sm text-gray-300">
+                    <svg className="w-5 h-5 text-teal-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/services/mythos-readiness"
+                  className="btn-primary text-base px-8 py-3.5"
+                >
+                  Learn About Mythos Readiness
+                </Link>
+                <Link
+                  href="/contact?service=mythos-readiness"
+                  className="border-2 border-teal-500/50 text-teal-400 hover:bg-teal-500/10 font-semibold px-6 py-3 rounded-lg transition-all duration-200 text-base"
+                >
+                  Get Assessed
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: threat stat cards */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  value: "< 5 min",
+                  label: "Time for AI bots to begin exploitation after a CVE drops",
+                  icon: (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                },
+                {
+                  value: "72%",
+                  label: "Of breaches start through an internet-facing asset",
+                  icon: (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                },
+                {
+                  value: "3×",
+                  label: "Faster attack velocity of AI tools vs. human operators",
+                  icon: (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  ),
+                },
+                {
+                  value: "91%",
+                  label: "Of attack chains exploit at least one chained low-severity flaw",
+                  icon: (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    </svg>
+                  ),
+                },
+              ].map((stat) => (
+                <div
+                  key={stat.value}
+                  className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/8 hover:border-teal-500/30 transition-all duration-200"
+                >
+                  <div className="w-9 h-9 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center mb-3">
+                    {stat.icon}
+                  </div>
+                  <p className="text-2xl font-extrabold text-teal-400">{stat.value}</p>
+                  <p className="mt-1 text-xs text-gray-400 leading-relaxed">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

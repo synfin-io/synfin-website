@@ -2,13 +2,12 @@ import Link from "next/link";
 import Logo from "./Logo";
 
 const services = [
-  { label: "Source Code Review (SCR)", href: "/services#scr" },
-  { label: "Software Composition Analysis (SCA)", href: "/services#sca" },
-  { label: "DAST", href: "/services#dast" },
-  { label: "IAST", href: "/services#iast" },
+  { label: "Application Security", href: "/services#appsec" },
+  { label: "Supply Chain Security", href: "/services/supply-chain-security" },
   { label: "Vulnerability Management", href: "/services#vm" },
   { label: "Red Teaming", href: "/services#red-team" },
   { label: "Purple Teaming", href: "/services#purple-team" },
+  { label: "Mythos Readiness ✦", href: "/services/mythos-readiness", highlight: true },
 ];
 
 const company = [
@@ -63,9 +62,14 @@ export default function Footer() {
                 <li key={s.href}>
                   <Link
                     href={s.href}
-                    className="text-sm text-gray-400 hover:text-teal-400 transition-colors"
+                    className={`text-sm transition-colors ${"highlight" in s && s.highlight ? "text-teal-400 hover:text-teal-300 font-medium" : "text-gray-400 hover:text-teal-400"}`}
                   >
                     {s.label}
+                    {"highlight" in s && s.highlight && (
+                      <span className="ml-2 text-xs bg-teal-900/50 text-teal-400 border border-teal-700/50 px-1.5 py-0.5 rounded-full">
+                        New
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}

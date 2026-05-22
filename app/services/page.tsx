@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "SynFin cybersecurity services: Application Security (SCR, SCA, DAST, IAST), Vulnerability Management, Red Teaming, and Purple Teaming.",
+    "SynFin cybersecurity services: Application Security (SCR, SCA, DAST, IAST), Vulnerability Management, Red Teaming, Purple Teaming, and Mythos Readiness for AI-automated attack defense.",
 };
 
 // ──────────────────────────────────────────────
@@ -22,7 +22,7 @@ const appSecServices = [
       "OWASP Top 10 and CWE/SANS Top 25 mapping",
       "Business logic and authentication flow review",
       "Secrets and credential scanning",
-      "Prioritised finding with line-level remediation guidance",
+      "Prioritized finding with line-level remediation guidance",
     ],
     badge: "Static Analysis",
   },
@@ -78,10 +78,10 @@ const otherServices = [
     id: "vm",
     title: "Vulnerability Management",
     description:
-      "A continuous, lifecycle-driven programme to discover, prioritise, remediate, and verify vulnerabilities across your entire infrastructure and application estate.",
+      "A continuous, lifecycle-driven program to discover, prioritize, remediate, and verify vulnerabilities across your entire infrastructure and application estate.",
     bullets: [
       "Asset discovery and attack surface mapping",
-      "Risk-based prioritisation (CVSS, EPSS, business context)",
+      "Risk-based prioritization (CVSS, EPSS, business context)",
       "Integration with Tenable, Qualys, Rapid7",
       "SLA-driven remediation tracking dashboards",
       "Executive and technical reporting cadences",
@@ -166,6 +166,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── MYTHOS READINESS FEATURED BANNER ──── */}
+      <section className="bg-gray-900 py-12 px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl bg-gradient-to-r from-teal-900/60 to-slate-800/80 border border-teal-500/30 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="text-white font-bold text-lg">Mythos Readiness</h3>
+                  <span className="text-xs bg-teal-500/20 text-teal-400 border border-teal-500/30 px-2 py-0.5 rounded-full font-semibold">New</span>
+                </div>
+                <p className="text-gray-300 text-sm max-w-xl">
+                  AI-automated attack platforms are already targeting organizations. Prepare your defenses now —
+                  attack surface reduction, AI-powered scanning, and attack chain analysis before the bots find you first.
+                </p>
+              </div>
+            </div>
+            <Link href="/services/mythos-readiness" className="btn-primary shrink-0 whitespace-nowrap">
+              Learn More →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── APPLICATION SECURITY ─────────────── */}
       <section id="appsec" className="section bg-white">
         <div className="container-xl">
@@ -173,7 +202,7 @@ export default function ServicesPage() {
             <span className="text-brand-teal font-semibold text-sm uppercase tracking-wider">Application Security</span>
             <h2 className="section-heading mt-2">AppSec Coverage Across the SDLC</h2>
             <p className="section-subheading mx-auto">
-              Four complementary testing disciplines that together deliver defence-in-depth for
+              Four complementary testing disciplines that together deliver defense-in-depth for
               your software development lifecycle.
             </p>
           </div>
@@ -206,6 +235,74 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── SUPPLY CHAIN SECURITY ───────────── */}
+      <section className="section bg-white">
+        <div className="container-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-brand-teal font-semibold text-sm uppercase tracking-wider">Software Supply Chain</span>
+              <h2 className="section-heading mt-2">Secure Every Link in Your Software Supply Chain</h2>
+              <p className="mt-4 text-gray-500 leading-relaxed">
+                The next breach may not come through your code — it will come through a
+                dependency, a build pipeline, or a third-party SDK. SynFin covers the full
+                attack surface beyond known CVEs.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  "Dependency confusion & typosquatting testing",
+                  "CI/CD pipeline security review (GitHub Actions, Jenkins, GitLab CI)",
+                  "Container & registry security assessment",
+                  "Third-party vendor & SDK risk",
+                  "SBOM generation (CycloneDX, SPDX, VEX)",
+                  "NIST SP 800-161, EO 14028, SLSA framework alignment",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
+                    <svg className="w-4 h-4 text-brand-teal mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8">
+                <Link href="/services/supply-chain-security" className="btn-primary">
+                  Explore Supply Chain Security →
+                </Link>
+              </div>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-gray-950 to-slate-800 p-8 shadow-xl">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-400" />
+                <div className="w-3 h-3 rounded-full bg-yellow-400" />
+                <div className="w-3 h-3 rounded-full bg-green-400" />
+                <span className="ml-2 text-xs text-gray-400 font-mono">supply-chain-risk.json</span>
+              </div>
+              <pre className="text-xs font-mono text-gray-300 leading-relaxed overflow-x-auto">
+{`{
+  "dependency_confusion": {
+    "internal_packages_exposed": 7,
+    "exploitable":               2,
+    "severity":                  "CRITICAL"
+  },
+  "cicd_pipeline": {
+    "unvetted_actions":     14,
+    "secrets_in_logs":       3,
+    "privilege_escalation":  true
+  },
+  "container_registry": {
+    "unsigned_images":        31,
+    "base_image_cves":         8,
+    "public_exposure":      true
+  },
+  "sbom_coverage": "0%",
+  "overall_risk": "HIGH"
+}`}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── VM / RED / PURPLE ────────────────── */}
       <section className="section bg-gray-50">
         <div className="container-xl">
@@ -213,7 +310,7 @@ export default function ServicesPage() {
             <span className="text-brand-teal font-semibold text-sm uppercase tracking-wider">Adversarial &amp; Continuous</span>
             <h2 className="section-heading mt-2">Beyond the Scan</h2>
             <p className="section-subheading mx-auto">
-              Mature security programmes require continuous vulnerability management and
+              Mature security programs require continuous vulnerability management and
               real-world attack simulations to stay ahead of threats.
             </p>
           </div>
