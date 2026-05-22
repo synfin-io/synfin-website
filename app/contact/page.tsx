@@ -31,7 +31,7 @@ export default function ContactPage() {
       if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
     } catch {
-      alert("Something went wrong. Please email us directly at prasanthi@synfin.io");
+      alert("Something went wrong. Please email us directly at sales@synfin.io");
     } finally {
       setLoading(false);
     }
@@ -43,8 +43,8 @@ export default function ContactPage() {
   const contactItems = [
     {
       label: "Email",
-      value: "prasanthi@synfin.io",
-      href: "mailto:prasanthi@synfin.io",
+      value: "sales@synfin.io",
+      href: "mailto:sales@synfin.io",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -64,9 +64,9 @@ export default function ContactPage() {
       ),
     },
     {
-      label: "Address",
-      value: "5725 Fuder Dr, McKinney, TX 75070",
-      href: "https://maps.google.com/?q=5725+Fuder+Dr+McKinney+TX+75070",
+      label: "Location",
+      value: "Dallas, TX",
+      href: "https://maps.google.com/?q=Dallas+TX",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}

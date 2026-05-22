@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about SynFin LLC — a McKinney, TX-based cybersecurity firm delivering Application Security, Vulnerability Management, and adversarial testing services.",
+    "Learn about SynFin LLC — a Dallas, TX-based cybersecurity firm delivering Application Security, Vulnerability Management, and adversarial testing services.",
 };
 
 const values = [
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 checkbox exercise.
               </p>
               <p className="mt-4 text-gray-500 leading-relaxed">
-                Based in McKinney, Texas, we serve clients across industries — from
+                Based in Dallas, Texas, we serve clients across industries — from
                 technology startups to regulated financial and healthcare enterprises. Our
                 team brings decades of combined experience across application security,
                 penetration testing, threat intelligence, and security program management.
@@ -117,7 +117,7 @@ export default function AboutPage() {
             {/* Visual: key facts */}
             <div className="grid grid-cols-2 gap-4">
               {[
-                { label: "Founded", value: "2020", sub: "McKinney, TX" },
+                { label: "Founded", value: "2020", sub: "Dallas, TX" },
                 { label: "Assessments", value: "500+", sub: "Delivered" },
                 { label: "Team Certs", value: "20+", sub: "Industry certifications" },
                 { label: "Industries", value: "12+", sub: "Sectors served" },

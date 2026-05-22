@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: "SynFin Contact Form <no-reply@synfin.io>",
-      to: "prasanthi@synfin.io",
+      to: "sales@synfin.io",
       replyTo: email,
       subject: `New enquiry from ${name}${company ? ` at ${company}` : ""}`,
       html: `

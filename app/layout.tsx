@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "DAST",
     "IAST",
     "SCA",
-    "McKinney TX",
+    "Dallas TX",
   ],
   authors: [{ name: "SynFin LLC" }],
   openGraph: {

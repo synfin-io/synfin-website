@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "SynFin — Cybersecurity Experts",
   description:
-    "SynFin delivers enterprise-grade Application Security, Vulnerability Management, Red Teaming, and Purple Teaming. Headquartered in McKinney, TX.",
+    "SynFin delivers enterprise-grade Application Security, Vulnerability Management, Red Teaming, and Purple Teaming. Headquartered in Dallas, TX.",
 };
 
 // ──────────────────────────────────────────────
