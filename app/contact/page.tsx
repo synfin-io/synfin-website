@@ -236,10 +236,12 @@ export default function ContactPage() {
                         className={inputClass}
                       >
                         <option value="">Select a service…</option>
+                        <option value="mythos-readiness">Mythos Readiness Assessment (AI Attacks)</option>
                         <option value="scr">Source Code Review (SCR)</option>
                         <option value="sca">Software Composition Analysis (SCA)</option>
                         <option value="dast">Dynamic Application Security Testing (DAST)</option>
                         <option value="iast">Interactive Application Security Testing (IAST)</option>
+                        <option value="supply-chain-security">Software Supply Chain Security</option>
                         <option value="vm">Vulnerability Management</option>
                         <option value="red-team">Red Teaming</option>
                         <option value="purple-team">Purple Teaming</option>

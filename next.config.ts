@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 // ── Security Headers (OWASP A05 — Security Misconfiguration) ────────────────
 const securityHeaders = [
   // Prevent clickjacking — disallow framing by any origin
@@ -42,33 +44,38 @@ const securityHeaders = [
     value: "same-origin",
   },
   // Content Security Policy (OWASP A03 — XSS mitigation)
-  // NOTE: 'unsafe-inline' for scripts is required by Next.js 15 App Router
-  // for hydration chunks. For stricter enforcement, migrate to nonce-based CSP
-  // via middleware — see: https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy
+  // Development: includes 'unsafe-eval' — required by React/Turbopack for
+  //   hot reload, error overlays, and call-stack reconstruction.
+  // Production:  'unsafe-eval' is omitted — React never uses eval() in prod.
   {
     key: "Content-Security-Policy",
     value: [
       "default-src 'self'",
-      // Next.js requires unsafe-inline for its inline runtime scripts
-      "script-src 'self' 'unsafe-inline'",
-      // Tailwind uses inline styles; Google Fonts needs googleapis.com
+      // unsafe-eval only in dev (Turbopack / React DevTools requirement)
+      isDev
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+        : "script-src 'self' 'unsafe-inline'",
+      // Tailwind inline styles + Google Fonts stylesheet
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       // Google Fonts files
       "font-src 'self' https://fonts.gstatic.com",
-      // Images: allow self, data URIs, and HTTPS (for any future image hosting)
+      // Images: self, data URIs, blob, and HTTPS sources
       "img-src 'self' data: blob: https:",
       // API calls: only to self (Resend is called server-side, not from browser)
-      "connect-src 'self'",
+      // Dev also needs webpack-hmr websocket
+      isDev
+        ? "connect-src 'self' ws://localhost:* wss://localhost:*"
+        : "connect-src 'self'",
       // Disallow <object>, <embed>, <applet>
       "object-src 'none'",
       // Disallow <base> tag hijacking
       "base-uri 'self'",
       // Only allow form submissions to same origin
       "form-action 'self'",
-      // Deny framing from all origins (redundant with X-Frame-Options, defence-in-depth)
+      // Deny framing from all origins
       "frame-ancestors 'none'",
-      // Upgrade any remaining HTTP requests to HTTPS
-      "upgrade-insecure-requests",
+      // Upgrade any remaining HTTP requests to HTTPS (prod only — breaks dev localhost)
+      ...(isDev ? [] : ["upgrade-insecure-requests"]),
     ].join("; "),
   },
 ];
@@ -77,7 +84,6 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Apply security headers to all routes
         source: "/(.*)",
         headers: securityHeaders,
       },
